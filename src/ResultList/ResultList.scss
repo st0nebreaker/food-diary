@@ -1,0 +1,24 @@
+.result-list {
+	display: block;
+	list-style-type: none;
+	text-align: start;
+	margin-top: 0;
+}
+
+.result-item {
+	border: 1px solid grey;
+	padding: 4px;
+	background-color: white;
+	&:hover {
+		background-color: lightgrey;
+	}
+}
+
+.item-pic {
+	width: 3vw;
+	margin-right: 4px;
+}
+
+.hide-comp {
+	display: none;
+}
