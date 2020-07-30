@@ -22,7 +22,6 @@ class App extends Component {
 	findFood = async (givenValue) => {
 		try {
 			const data = await fetchFood(givenValue);
-			console.log(data)
 			this.setState({ foodClicked: data });
 		} catch (error) {
 			console.log(error);
@@ -63,7 +62,12 @@ class App extends Component {
 					{this.state.foodClicked && 
 						<Route 
 							path='/food/:name'
-							render={() => <FoodInfo food={this.state.foodClicked} updateChosenFood={this.updateChosenFood} hideResultList={this.hideResultList} />}
+							render={() => 
+								<FoodInfo 
+									food={this.state.foodClicked} 
+									updateChosenFood={this.updateChosenFood} 
+									hideResultList={this.hideResultList} 
+								/>}
 						/>
 					}
 					{/* Route to LogHistoryDetails */}
