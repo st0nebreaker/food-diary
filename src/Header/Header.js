@@ -4,11 +4,11 @@ import "./Header.scss";
 
 const Header = () => {
 	return (
-		<>
-			<Link to='/trends'><button>Trends</button></Link>
-			Food Diary
-			<button>Logout</button>
-		</>
+		<section className='header'>
+			<Link to='/trends'><button className='trend-btn'>Trends</button></Link>
+			<div className='title'>Food Diary</div>
+			<button className='logout-btn'>Logout</button>
+		</section>
 	)
 }
 

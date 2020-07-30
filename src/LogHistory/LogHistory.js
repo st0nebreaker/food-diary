@@ -4,9 +4,9 @@ import "./LogHistory.scss";
 
 const LogHistory = () => {
 	return (
-		<>
-			<section>LOGHISTORY!</section>
-		</>
+		<section className='log-history-wrapper'>
+			Food History
+		</section>
 	)
 }
 
