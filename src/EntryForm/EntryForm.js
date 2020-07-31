@@ -69,6 +69,61 @@ class EntryForm extends Component {
 						/>
 				}
 				</div>
+				<label>Notable symptoms today</label>
+				<label>
+          Energetic:
+          <input
+            name="energetic"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange} 
+					/>
+        </label>
+				<label>
+          Lethargic:
+          <input
+            name="lethargic"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange} 
+					/>
+        </label>
+				<label>
+          Moody:
+          <input
+            name="moody"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange} 
+					/>
+        </label>
+				<label>
+          Bowel movements:
+          <input
+            name="bowel"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange} 
+					/>
+        </label>
+				<label>
+          Nausea:
+          <input
+            name="nausea"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange} 
+					/>
+        </label>
+				<label>
+          Headache/Foggy:
+          <input
+            name="headache"
+            type="checkbox"
+            // checked={this.state.isGoing}
+            // onChange={this.handleInputChange} 
+					/>
+        </label>
 				<input 
 				type='text' 
 				name='comment' 

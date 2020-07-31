@@ -38,7 +38,6 @@ class App extends Component {
 	}
 
 	addToLog = (givenEntry) => {
-		// debugger;
 		this.setState({ loggedEntries: [...this.state.loggedEntries, givenEntry] });
 	}
 
