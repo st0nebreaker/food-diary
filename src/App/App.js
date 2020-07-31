@@ -7,12 +7,13 @@ import EntryForm from '../EntryForm/EntryForm';
 import Trends from '../Trends/Trends';
 import FoodInfo from '../FoodInfo/FoodInfo';
 import { fetchFood } from '../apiCalls';
+import { data1, data2 } from '../data';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			loggedEntries: [],
+			loggedEntries: [data1, data2],
 			foodClicked: null,
 			chosenFood: null,
 			resultsActive: true,
@@ -46,7 +47,7 @@ class App extends Component {
 			<div className='App'>
 				<Header />
 				<section className='layout-body'>
-					<LogHistory />
+					<LogHistory loggedEntries={this.state.loggedEntries} />
 					<EntryForm 
 						findFood={this.findFood} 
 						chosenFood={this.state.chosenFood}
