@@ -81,7 +81,7 @@ class EntryForm extends Component {
 				<button 
 					className='submit-form'
 					type='button'
-					onClick={() => this.props.addToLog({food: this.props.chosenFood, comment: this.state.comment})}
+					onClick={() => this.props.addToLog({food: this.props.chosenFood, comment: this.state.comment, date: this.state.date})}
 				>
 					Log
 				</button>

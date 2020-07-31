@@ -7,12 +7,13 @@ import EntryForm from '../EntryForm/EntryForm';
 import Trends from '../Trends/Trends';
 import FoodInfo from '../FoodInfo/FoodInfo';
 import { fetchFood } from '../apiCalls';
+import { data1, data2 } from '../data';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			loggedEntries: [],
+			loggedEntries: [data1, data2],
 			foodClicked: null,
 			chosenFood: null,
 			resultsActive: true,
@@ -22,7 +23,6 @@ class App extends Component {
 	findFood = async (givenValue) => {
 		try {
 			const data = await fetchFood(givenValue);
-			console.log(data)
 			this.setState({ foodClicked: data });
 		} catch (error) {
 			console.log(error);
@@ -47,7 +47,7 @@ class App extends Component {
 			<div className='App'>
 				<Header />
 				<section className='layout-body'>
-					<LogHistory />
+					<LogHistory loggedEntries={this.state.loggedEntries} />
 					<EntryForm 
 						findFood={this.findFood} 
 						chosenFood={this.state.chosenFood}
@@ -63,7 +63,12 @@ class App extends Component {
 					{this.state.foodClicked && 
 						<Route 
 							path='/food/:name'
-							render={() => <FoodInfo food={this.state.foodClicked} updateChosenFood={this.updateChosenFood} hideResultList={this.hideResultList} />}
+							render={() => 
+								<FoodInfo 
+									food={this.state.foodClicked} 
+									updateChosenFood={this.updateChosenFood} 
+									hideResultList={this.hideResultList} 
+								/>}
 						/>
 					}
 					{/* Route to LogHistoryDetails */}

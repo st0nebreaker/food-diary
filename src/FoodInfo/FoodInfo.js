@@ -11,7 +11,7 @@ class FoodInfo extends Component {
 	}
 
 	componentDidMount() {
-		this.setState({ foodItem: this.props.food, active: true })
+		this.setState({ foodItem: this.props.food })
 	}
 
 	handleAdd = () => {
@@ -23,6 +23,13 @@ class FoodInfo extends Component {
 	render() {
 		return (
 			<section className={this.state.active ? 'info-wrapper' : 'hide-comp'}>
+				<button 
+					className='exit' 
+					type='button'
+					onClick={() => this.setState({ active: false })}
+				>
+					X
+				</button>
 				<h3>{this.state.foodItem.food_name}</h3>
 				<section className='nutrient-info'>
 					<p>Serving size: {this.state.foodItem.serving_qty} {this.state.foodItem.serving_unit} ({this.state.foodItem.serving_weight_grams}g)</p>
@@ -40,6 +47,7 @@ class FoodInfo extends Component {
 				{console.log(this.state.foodItem.photo)}
 				<button 
 					className='add-btn' 
+					type='button'
 					onClick={this.handleAdd}
 				>
 					Add to form
