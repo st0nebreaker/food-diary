@@ -14,8 +14,14 @@ class EntryForm extends Component {
 			date: new Date(),
 			query: '',
 			searchQuery: '',
-			comment: '',
+			comment: [],
 			dataList: [],
+			energetic: false,
+			lethargic: false,
+			moody: false,
+			bowel: false,
+			nausea: false,
+			headache: false,
 			error: '',
 		}
 	}
@@ -41,14 +47,25 @@ class EntryForm extends Component {
 		}
 	}
 
+	handleInputChange = (event) => {
+		this.setState({ [event.target.name]: !this.state[event.target.name] })
+
+		if (this.state.comment.includes(event.target.name)) {
+			const index = this.state.comment.indexOf(event.target.name);
+			this.state.comment.splice(index, 1);
+			this.setState({ comment: this.state.comment })
+		} else {
+			this.setState({ comment: [...this.state.comment, event.target.name] })
+		}
+	}
+
 	render() {
 		return (
 			<form className='entry-form'>
 				<section>New Food Entry</section>
 				<DatePicker
 					selected={this.state.date}
-					// onSelect={this.handleSelect} //when day is clicked
-					onChange={(this.handleDateChange)} //only when value has changed
+					onChange={(this.handleDateChange)}
 				/>
 				<div>
 					<input
@@ -75,8 +92,8 @@ class EntryForm extends Component {
           <input
             name="energetic"
             type="checkbox"
-            // checked={this.state.isGoing}
-            // onChange={this.handleInputChange} 
+            checked={this.state.energetic}
+            onChange={this.handleInputChange} 
 					/>
         </label>
 				<label>
@@ -84,8 +101,8 @@ class EntryForm extends Component {
           <input
             name="lethargic"
             type="checkbox"
-            // checked={this.state.isGoing}
-            // onChange={this.handleInputChange} 
+            checked={this.state.lethargic}
+            onChange={this.handleInputChange} 
 					/>
         </label>
 				<label>
@@ -93,8 +110,8 @@ class EntryForm extends Component {
           <input
             name="moody"
             type="checkbox"
-            // checked={this.state.isGoing}
-            // onChange={this.handleInputChange} 
+            checked={this.state.moody}
+            onChange={this.handleInputChange} 
 					/>
         </label>
 				<label>
@@ -102,8 +119,8 @@ class EntryForm extends Component {
           <input
             name="bowel"
             type="checkbox"
-            // checked={this.state.isGoing}
-            // onChange={this.handleInputChange} 
+            checked={this.state.bowel}
+            onChange={this.handleInputChange} 
 					/>
         </label>
 				<label>
@@ -111,8 +128,8 @@ class EntryForm extends Component {
           <input
             name="nausea"
             type="checkbox"
-            // checked={this.state.isGoing}
-            // onChange={this.handleInputChange} 
+            checked={this.state.nausea}
+            onChange={this.handleInputChange} 
 					/>
         </label>
 				<label>
@@ -120,19 +137,10 @@ class EntryForm extends Component {
           <input
             name="headache"
             type="checkbox"
-            // checked={this.state.isGoing}
-            // onChange={this.handleInputChange} 
+            checked={this.state.headache}
+            onChange={this.handleInputChange} 
 					/>
         </label>
-				<input 
-				type='text' 
-				name='comment' 
-				placeholder='noteable comments or symptoms' 
-				className='comment-box'
-				value={this.state.comment}
-				onChange={(e) => this.setState({ comment: e.target.value })}
-				aria-label='comment'
-				/>
 				<button 
 					className='submit-form'
 					type='button'

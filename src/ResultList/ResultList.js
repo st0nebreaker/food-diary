@@ -7,7 +7,6 @@ const ResultList = (props) => {
 		<ul className={props.resultListActive ? 'result-list' : 'hide-comp'}>
 			{props.items.map((elem, i) => {
 				return (
-					<Link to={`/food/${elem.food_name}`} key={i}>
 						<li 
 							key={i} 
 							className='result-item' 
@@ -16,7 +15,6 @@ const ResultList = (props) => {
 							<img src={elem.photo.thumb} alt='food item' className='item-pic' />
 							{elem.food_name}
 						</li>
-					</Link>
 				)
 			})}
 		</ul>
