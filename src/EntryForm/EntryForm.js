@@ -31,6 +31,7 @@ class EntryForm extends Component {
 	};
 	
 	handleSearchChange = ({ target: { value } }) => {
+		this.props.showResultList();
 		this.setState({query: value});
 
 		const search = _.debounce(this.sendQuery, 200);
@@ -77,7 +78,7 @@ class EntryForm extends Component {
 						onChange={this.handleSearchChange}
 						aria-label="search"
 					/>
-					{this.props.chosenFood && <div>Selected: {this.props.chosenFood.food_name}</div>}
+					{this.props.chosenFoods.length > 0 && <div>Selected: {this.props.chosenFoods.map(food => food.food_name)}</div>}
 					{this.state.dataList && 
 						<ResultList 
 							items={this.state.dataList} 
@@ -144,7 +145,7 @@ class EntryForm extends Component {
 				<button 
 					className='submit-form'
 					type='button'
-					onClick={() => this.props.addToLog({food: this.props.chosenFood, comment: this.state.comment, date: this.state.date})}
+					onClick={() => this.props.addToLog({food: this.props.chosenFoods, comment: this.state.comment, date: this.state.date})}
 				>
 					Log
 				</button>

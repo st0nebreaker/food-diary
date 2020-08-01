@@ -26,7 +26,6 @@ const FoodInfo = ({ food, handleAdd, closeFoodCard }) => {
 				<p>Fiber: {food.nf_dietary_fiber}g</p>
 				<p>Sugar: {food.nf_sugars}g</p>
 			</section>
-			{console.log(food.photo)}
 			<button 
 				className='add-btn' 
 				type='button'
@@ -34,7 +33,7 @@ const FoodInfo = ({ food, handleAdd, closeFoodCard }) => {
 			>
 				Add to form
 			</button>
-			{/* <img src={this.state.foodItem.photo.thumb} alt='food item' className='food-info-pic' /> */}
+			<img src={food.photo.thumb} alt='food item' className='food-info-pic' />
 		</section>
 	)
 }

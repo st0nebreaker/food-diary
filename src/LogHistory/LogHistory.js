@@ -5,6 +5,7 @@ import "./LogHistory.scss";
 
 const LogHistory = (props) => {
 	const entryCards = props.loggedEntries.map((entry, i) => {
+		console.log(entry)
 		return (
 			<FoodLog
 				key={i}

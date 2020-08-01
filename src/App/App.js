@@ -15,7 +15,7 @@ class App extends Component {
 		this.state = {
 			loggedEntries: [data1, data2],
 			activeFoodItem: null,
-			chosenFood: null,
+			chosenFoods: [],
 			resultsActive: true,
 		}
 	}
@@ -29,12 +29,16 @@ class App extends Component {
 		}
 	}
 
-	updateChosenFood = (givenFood) => {
-		this.setState({ chosenFood: givenFood });
+	updateChosenFoods = (givenFood) => {
+		this.setState({ chosenFoods: [...this.state.chosenFoods, givenFood] });
 	}
 
 	hideResultList = () => {
 		this.setState({ resultsActive: false });
+	}
+
+	showResultList = () => {
+		this.setState({ resultsActive: true });
 	}
 	
 	hideFoodDetails = () => {
@@ -53,7 +57,8 @@ class App extends Component {
 					<LogHistory loggedEntries={this.state.loggedEntries} />
 					<EntryForm 
 						findFood={this.findFood} 
-						chosenFood={this.state.chosenFood}
+						chosenFoods={this.state.chosenFoods}
+						showResultList={this.showResultList}
 						resultListActive={this.state.resultsActive} 
 						addToLog={this.addToLog}
 					/>
@@ -66,20 +71,17 @@ class App extends Component {
 					{this.state.activeFoodItem && 
 						<FoodInfo
 							food={this.state.activeFoodItem} 
-							// updateChosenFood={this.updateChosenFood} 
 							handleAdd={() => {
-								this.updateChosenFood(this.state.activeFoodItem);
+								this.updateChosenFoods(this.state.activeFoodItem);
 								this.hideResultList();
 								this.hideFoodDetails();
 							}}
 							closeFoodCard={() => {
-								// this.hideResultList();
 								this.hideFoodDetails();
 							}} 
 						/>
 					}
 					{/* Route to LogHistoryDetails */}
-					{/* Route to FoodDetails */}
 				</section>
 			</div>
 		);

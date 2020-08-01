@@ -1,5 +1,5 @@
 export const data1 = {
-	food: {
+	food: [{
 		"food_name": "hummus",
 		"brand_name": null,
 		"serving_qty": 0.25,
@@ -227,13 +227,13 @@ export const data1 = {
 					"is_user_uploaded": false
 			},
 			"sub_recipe": null
-	},
+	}],
 	comment: 'bloated',
 	date: '05/26/2020'
 }
 
 export const data2 = {
-	food: {
+	food: [{
 		"food_name": "hummus",
 		"brand_name": null,
 		"serving_qty": 0.25,
@@ -461,7 +461,7 @@ export const data2 = {
 					"is_user_uploaded": false
 			},
 			"sub_recipe": null
-	},
+	}],
 	comment: 'energetic',
 	date: '05/29/2020'
 }
