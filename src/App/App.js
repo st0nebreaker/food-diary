@@ -49,6 +49,12 @@ class App extends Component {
 		this.setState({ loggedEntries: [...this.state.loggedEntries, givenEntry] });
 	}
 
+	handleFoodSelection = () => {
+		this.updateChosenFoods(this.state.activeFoodItem);
+		this.hideResultList();
+		this.hideFoodDetails();
+	}
+
 	render () {
 		return (
 			<div className='App'>
@@ -72,14 +78,8 @@ class App extends Component {
 					{this.state.activeFoodItem && 
 						<FoodInfo
 							food={this.state.activeFoodItem} 
-							handleAdd={() => {
-								this.updateChosenFoods(this.state.activeFoodItem);
-								this.hideResultList();
-								this.hideFoodDetails();
-							}}
-							closeFoodCard={() => {
-								this.hideFoodDetails();
-							}} 
+							handleAdd={this.handleFoodSelection}
+							closeFoodCard={this.hideFoodDetails} 
 						/>
 					}
 					{/* Route to LogHistoryDetails */}

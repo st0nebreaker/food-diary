@@ -102,7 +102,7 @@ class EntryForm extends Component {
 					<input
 						type="text"
 						name="search"
-						placeholder="search cocktails..."
+						placeholder="search food items..."
 						className="header-search"
 						value={this.state.query}
 						onChange={this.handleSearchChange}
@@ -126,6 +126,7 @@ class EntryForm extends Component {
 							name="energetic"
 							type="checkbox"
 							className='checkbox'
+							aria-label='symptom-picker'
 							checked={this.state.energetic}
 							onChange={this.handleInputChange} 
 						/>
@@ -136,6 +137,7 @@ class EntryForm extends Component {
 							name="lethargic"
 							type="checkbox"
 							className='checkbox'
+							aria-label='symptom-picker'
 							checked={this.state.lethargic}
 							onChange={this.handleInputChange} 
 						/>
@@ -146,6 +148,7 @@ class EntryForm extends Component {
 							name="moody"
 							type="checkbox"
 							className='checkbox'
+							aria-label='symptom-picker'
 							checked={this.state.moody}
 							onChange={this.handleInputChange} 
 						/>
@@ -156,6 +159,7 @@ class EntryForm extends Component {
 							name="bowel"
 							type="checkbox"
 							className='checkbox'
+							aria-label='symptom-picker'
 							checked={this.state.bowel}
 							onChange={this.handleInputChange} 
 						/>
@@ -166,6 +170,7 @@ class EntryForm extends Component {
 							name="nausea"
 							type="checkbox"
 							className='checkbox'
+							aria-label='symptom-picker'
 							checked={this.state.nausea}
 							onChange={this.handleInputChange} 
 						/>
@@ -176,6 +181,7 @@ class EntryForm extends Component {
 							name="headache"
 							type="checkbox"
 							className='checkbox'
+							aria-label='symptom-picker'
 							checked={this.state.headache}
 							onChange={this.handleInputChange} 
 						/>
