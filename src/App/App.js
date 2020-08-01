@@ -14,7 +14,7 @@ class App extends Component {
 		super();
 		this.state = {
 			loggedEntries: [data1, data2],
-			foodClicked: null,
+			activeFoodItem: null,
 			chosenFood: null,
 			resultsActive: true,
 		}
@@ -23,7 +23,7 @@ class App extends Component {
 	findFood = async (givenValue) => {
 		try {
 			const data = await fetchFood(givenValue);
-			this.setState({ foodClicked: data });
+			this.setState({ activeFoodItem: data });
 		} catch (error) {
 			console.log(error);
 		}
@@ -35,6 +35,10 @@ class App extends Component {
 
 	hideResultList = () => {
 		this.setState({ resultsActive: false });
+	}
+	
+	hideFoodDetails = () => {
+		this.setState({ activeFoodItem: null });
 	}
 
 	addToLog = (givenEntry) => {
@@ -59,15 +63,19 @@ class App extends Component {
 							<Trends />
 						)}
 					/>
-					{this.state.foodClicked && 
-						<Route 
-							path='/food/:name'
-							render={() => 
-								<FoodInfo 
-									food={this.state.foodClicked} 
-									updateChosenFood={this.updateChosenFood} 
-									hideResultList={this.hideResultList} 
-								/>}
+					{this.state.activeFoodItem && 
+						<FoodInfo
+							food={this.state.activeFoodItem} 
+							// updateChosenFood={this.updateChosenFood} 
+							handleAdd={() => {
+								this.updateChosenFood(this.state.activeFoodItem);
+								this.hideResultList();
+								this.hideFoodDetails();
+							}}
+							closeFoodCard={() => {
+								// this.hideResultList();
+								this.hideFoodDetails();
+							}} 
 						/>
 					}
 					{/* Route to LogHistoryDetails */}
