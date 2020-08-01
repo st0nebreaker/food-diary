@@ -10,7 +10,7 @@ const FoodLog = (props) => {
 				<p className='card-p'><span className='bold'>food consumed:</span> {props.food.map(f => f.food_name)}</p>
 				<p className='card-p'><span className='bold'>noted symptoms:</span> {props.comment}</p>
 			</section>
-			<img src={require("../assets/expand.svg")} alt="Expand log" className="expand" />
+			<Link to={`/foodlog/${props.date}`}><img src={require("../assets/expand.svg")} alt="Expand log" className="expand" /></Link>
 		</section>
 	)
 }
