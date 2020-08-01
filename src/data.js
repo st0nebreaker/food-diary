@@ -229,7 +229,7 @@ export const data1 = {
 			"sub_recipe": null
 	}],
 	comment: 'bloated',
-	date: '05/26/2020'
+	date: 'Sun 07 26 2020'
 }
 
 export const data2 = {
@@ -463,5 +463,5 @@ export const data2 = {
 			"sub_recipe": null
 	}],
 	comment: 'energetic',
-	date: '05/29/2020'
+	date: 'Mon 07 27 2020'
 }

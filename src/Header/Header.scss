@@ -1,8 +1,14 @@
 .header {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	height: 10vh;
+	height: 4vh;
+	border-bottom: 2px solid #cccc31;
+	width: 80vw;
+	margin: 0 auto;
+	margin-bottom: 2.5rem;
+	margin-top: 1.5rem;
+	color: #0071bc;
+	font-family: "Source Sans Pro", Helvetica;
 }
 
 .trend-btn {
@@ -11,4 +17,8 @@
 
 .logout-btn {
 	margin-right: 15px;
+}
+
+.title {
+	margin-left: 35%;
 }

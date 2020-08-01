@@ -5,7 +5,6 @@ import "./LogHistory.scss";
 
 const LogHistory = (props) => {
 	const entryCards = props.loggedEntries.map((entry, i) => {
-		console.log(entry)
 		return (
 			<FoodLog
 				key={i}
@@ -18,7 +17,7 @@ const LogHistory = (props) => {
 
 	return (
 		<section className='log-history-wrapper'>
-			Food History
+			<h3 className='food-history'>Food History</h3>
 			{entryCards}
 		</section>
 	)

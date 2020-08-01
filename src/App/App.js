@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { Route, Link } from  'react-router-dom';
 import Header from '../Header/Header';
 import LogHistory from '../LogHistory/LogHistory';
@@ -58,6 +58,7 @@ class App extends Component {
 					<EntryForm 
 						findFood={this.findFood} 
 						chosenFoods={this.state.chosenFoods}
+						clearChosenFood={() => this.setState({chosenFoods: []})}
 						showResultList={this.showResultList}
 						resultListActive={this.state.resultsActive} 
 						addToLog={this.addToLog}
