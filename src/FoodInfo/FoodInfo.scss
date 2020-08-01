@@ -1,13 +1,51 @@
 .info-wrapper {
-	display: block;
+	display: flex;
 	position: absolute;
 	border: 1px solid grey;
 	width: 40vw;
 	height: 40vh;
 	background-color: white;
 	right: 11%;
+	z-index: 15;
+	flex-direction: column;
+	margin-top: -31%;
+	overflow: scroll;
 }
 
 .hide-comp {
 	display: none;
+}
+
+.food-info {
+	display: flex;
+	height: 26vh;
+	justify-content: space-between;
+	padding: 6px;
+}
+
+.ingred-p {
+	padding: 0;
+	margin: 2px;
+	text-align: start;
+}
+
+.add-btn {
+	text-align: center;
+	margin: 0 auto;
+	width: 8vw;
+	height: 3vh;
+}
+
+.food-info-pic {
+	width: 53%;
+	height: 82%;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.exit {
+	width: 2vw;
+  height: 2vh;
 }

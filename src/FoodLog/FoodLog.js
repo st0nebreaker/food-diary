@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import "./FoodLog.scss";
 
 const LogHistory = (props) => {
-	console.log(props.date)
 	return (
 		<section className='entry-card'>
-			{props.date.toString()}
-			{props.comment}
-			{props.food.map(f => f.food_name)}
+			<p className='card-p date'>{props.date}</p>
+			<section className='card-p-info'>
+				<p className='card-p'><span className='bold'>food consumed:</span> {props.food.map(f => f.food_name)}</p>
+				<p className='card-p'><span className='bold'>noted symptoms:</span> {props.comment}</p>
+			</section>
+			<img src={require("../assets/expand.svg")} alt="Add to Favorites" className="expand" />
 		</section>
 	)
 }

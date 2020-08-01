@@ -5,9 +5,8 @@ import "./Header.scss";
 const Header = () => {
 	return (
 		<section className='header'>
-			<Link to='/trends'><button className='trend-btn'>Trends</button></Link>
-			<div className='title'>Food Diary</div>
-			<button className='logout-btn'>Logout</button>
+			<Link to='/trends'><button className='trend-btn'>TRENDS</button></Link>
+			<h2 className='title'>Food Diary</h2>
 		</section>
 	)
 }

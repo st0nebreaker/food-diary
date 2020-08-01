@@ -29,3 +29,28 @@
 	align-items: center;
 	justify-content: space-evenly;
 }
+
+button {
+	background-color: #162e51;
+	color: white;
+	font-weight: bolder;
+	height: 2.5vh;
+	padding: 1px;
+	width: 6vw;
+	border: 1px solid #162e51;
+	font-size: .9em;
+	&:hover {
+    color: #cccc31;
+  }
+}
+
+h3 {
+	border-bottom: 2px solid #cccc31;
+	width: 25vw;
+	height: 2.3vh;
+	margin: 0 auto;
+	margin-bottom: 2.5rem;
+	margin-top: 1.5rem;
+	color: #0071bc;
+	font-family: "Source Sans Pro", Helvetica;
+}

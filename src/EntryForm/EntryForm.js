@@ -60,15 +60,45 @@ class EntryForm extends Component {
 		}
 	}
 
+	handleSubmit = () => {
+		this.clearComponent();
+		this.props.clearChosenFood();
+		this.props.addToLog({
+				food: this.props.chosenFoods, 
+				comment: this.state.comment, 
+				date: (this.state.date.toString()).slice(0, 15)
+		});
+	}
+
+	clearComponent = () => {
+		this.setState({
+			query: '',
+			searchQuery: '',
+			comment: [],
+			dataList: [],
+			energetic: false,
+			lethargic: false,
+			moody: false,
+			bowel: false,
+			nausea: false,
+			headache: false,
+			date: new Date(),
+		})
+	}
+
 	render() {
 		return (
 			<form className='entry-form'>
-				<section>New Food Entry</section>
-				<DatePicker
-					selected={this.state.date}
-					onChange={(this.handleDateChange)}
-				/>
-				<div>
+				<h3 className='form-title'>New Food Entry</h3>
+				<section className='input-container'>
+					Choose date:
+					<DatePicker
+						selected={this.state.date}
+						onChange={(this.handleDateChange)}
+					/>
+				</section>
+				<section className='input-container'>
+					Search food:
 					<input
 						type="text"
 						name="search"
@@ -78,76 +108,86 @@ class EntryForm extends Component {
 						onChange={this.handleSearchChange}
 						aria-label="search"
 					/>
-					{this.props.chosenFoods.length > 0 && <div>Selected: {this.props.chosenFoods.map(food => food.food_name)}</div>}
-					{this.state.dataList && 
-						<ResultList 
-							items={this.state.dataList} 
-							findFood={this.props.findFood} 
-							resultListActive={this.props.resultListActive} 
-						/>
+				</section>
+				<section className='input-container'>
+					{this.props.chosenFoods.length > 0 && <div><span className='subtitle'>Selected:</span> {this.props.chosenFoods.map(food => `${food.food_name}, `)}</div>}
+				</section>
+				{this.state.dataList && 
+					<ResultList 
+						items={this.state.dataList} 
+						findFood={this.props.findFood} 
+						resultListActive={this.props.resultListActive} 
+					/>
 				}
-				</div>
-				<label>Notable symptoms today</label>
-				<label>
-          Energetic:
-          <input
-            name="energetic"
-            type="checkbox"
-            checked={this.state.energetic}
-            onChange={this.handleInputChange} 
-					/>
-        </label>
-				<label>
-          Lethargic:
-          <input
-            name="lethargic"
-            type="checkbox"
-            checked={this.state.lethargic}
-            onChange={this.handleInputChange} 
-					/>
-        </label>
-				<label>
-          Moody:
-          <input
-            name="moody"
-            type="checkbox"
-            checked={this.state.moody}
-            onChange={this.handleInputChange} 
-					/>
-        </label>
-				<label>
-          Bowel movements:
-          <input
-            name="bowel"
-            type="checkbox"
-            checked={this.state.bowel}
-            onChange={this.handleInputChange} 
-					/>
-        </label>
-				<label>
-          Nausea:
-          <input
-            name="nausea"
-            type="checkbox"
-            checked={this.state.nausea}
-            onChange={this.handleInputChange} 
-					/>
-        </label>
-				<label>
-          Headache/Foggy:
-          <input
-            name="headache"
-            type="checkbox"
-            checked={this.state.headache}
-            onChange={this.handleInputChange} 
-					/>
-        </label>
+				<section className='input-container'>
+					<label>Mark notable symptoms today:</label>
+					<label>
+						<input
+							name="energetic"
+							type="checkbox"
+							className='checkbox'
+							checked={this.state.energetic}
+							onChange={this.handleInputChange} 
+						/>
+						Energetic
+					</label>
+					<label>
+						<input
+							name="lethargic"
+							type="checkbox"
+							className='checkbox'
+							checked={this.state.lethargic}
+							onChange={this.handleInputChange} 
+						/>
+						Lethargic
+					</label>
+					<label>
+						<input
+							name="moody"
+							type="checkbox"
+							className='checkbox'
+							checked={this.state.moody}
+							onChange={this.handleInputChange} 
+						/>
+						Moody
+					</label>
+					<label>
+						<input
+							name="bowel"
+							type="checkbox"
+							className='checkbox'
+							checked={this.state.bowel}
+							onChange={this.handleInputChange} 
+						/>
+						Bowel movements
+					</label>
+					<label>
+						<input
+							name="nausea"
+							type="checkbox"
+							className='checkbox'
+							checked={this.state.nausea}
+							onChange={this.handleInputChange} 
+						/>
+						Nausea
+					</label>
+					<label>
+						<input
+							name="headache"
+							type="checkbox"
+							className='checkbox'
+							checked={this.state.headache}
+							onChange={this.handleInputChange} 
+						/>
+						Headache/Foggy
+					</label>
+				</section>
 				<button 
 					className='submit-form'
 					type='button'
-					onClick={() => this.props.addToLog({food: this.props.chosenFoods, comment: this.state.comment, date: this.state.date})}
+					onClick={this.handleSubmit}
 				>
-					Log
+					LOG
 				</button>
 			</form>
 		)

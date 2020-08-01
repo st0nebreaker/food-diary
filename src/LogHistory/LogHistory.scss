@@ -1,6 +1,54 @@
 .log-history-wrapper {
 	width: 30vw;
 	height: 85vh;
-	border: 1px solid black;
-	padding: 10px;
+}
+
+.food-history {
+	background-color: rgba(13,133,186,0.75);
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.1;
+	padding: .5rem 1rem;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 4px black;
+	border-bottom: none;
+	text-align: start;
+	margin-bottom: 1rem;
+	margin-top: 0;
+	margin-left: 0;
+	width: 97%;
+}
+
+.entry-card {
+	height: 7.5vh;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-bottom: 25px;
+	background-color: #f0f0f0;
+	font-size: 13px;
+	padding: 3px;
+}
+
+.card-p {
+	padding: 0;
+	margin: 1px;
+}
+
+.date {
+	font-style: italic;
+	align-self: flex-start;
+}
+
+.card-p-info {
+	align-self: flex-start;
+	margin-top: 2px;
+	margin-left: 6%;
+	font-size: 11px;
+	text-align: start;
+}
+
+.expand {
+	width: 1.7vw;
 }
