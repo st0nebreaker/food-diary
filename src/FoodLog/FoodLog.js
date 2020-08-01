@@ -8,7 +8,7 @@ const LogHistory = (props) => {
 		<section className='entry-card'>
 			{props.date.toString()}
 			{props.comment}
-			{props.food.food_name}
+			{props.food.map(f => f.food_name)}
 		</section>
 	)
 }

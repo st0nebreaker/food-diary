@@ -14,8 +14,8 @@ class App extends Component {
 		super();
 		this.state = {
 			loggedEntries: [data1, data2],
-			foodClicked: null,
-			chosenFood: null,
+			activeFoodItem: null,
+			chosenFoods: [],
 			resultsActive: true,
 		}
 	}
@@ -23,22 +23,29 @@ class App extends Component {
 	findFood = async (givenValue) => {
 		try {
 			const data = await fetchFood(givenValue);
-			this.setState({ foodClicked: data });
+			this.setState({ activeFoodItem: data });
 		} catch (error) {
 			console.log(error);
 		}
 	}
 
-	updateChosenFood = (givenFood) => {
-		this.setState({ chosenFood: givenFood });
+	updateChosenFoods = (givenFood) => {
+		this.setState({ chosenFoods: [...this.state.chosenFoods, givenFood] });
 	}
 
 	hideResultList = () => {
 		this.setState({ resultsActive: false });
 	}
 
+	showResultList = () => {
+		this.setState({ resultsActive: true });
+	}
+	
+	hideFoodDetails = () => {
+		this.setState({ activeFoodItem: null });
+	}
+
 	addToLog = (givenEntry) => {
-		// debugger;
 		this.setState({ loggedEntries: [...this.state.loggedEntries, givenEntry] });
 	}
 
@@ -50,7 +57,8 @@ class App extends Component {
 					<LogHistory loggedEntries={this.state.loggedEntries} />
 					<EntryForm 
 						findFood={this.findFood} 
-						chosenFood={this.state.chosenFood}
+						chosenFoods={this.state.chosenFoods}
+						showResultList={this.showResultList}
 						resultListActive={this.state.resultsActive} 
 						addToLog={this.addToLog}
 					/>
@@ -60,19 +68,20 @@ class App extends Component {
 							<Trends />
 						)}
 					/>
-					{this.state.foodClicked && 
-						<Route 
-							path='/food/:name'
-							render={() => 
-								<FoodInfo 
-									food={this.state.foodClicked} 
-									updateChosenFood={this.updateChosenFood} 
-									hideResultList={this.hideResultList} 
-								/>}
+					{this.state.activeFoodItem && 
+						<FoodInfo
+							food={this.state.activeFoodItem} 
+							handleAdd={() => {
+								this.updateChosenFoods(this.state.activeFoodItem);
+								this.hideResultList();
+								this.hideFoodDetails();
+							}}
+							closeFoodCard={() => {
+								this.hideFoodDetails();
+							}} 
 						/>
 					}
 					{/* Route to LogHistoryDetails */}
-					{/* Route to FoodDetails */}
 				</section>
 			</div>
 		);
