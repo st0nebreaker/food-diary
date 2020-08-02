@@ -1,0 +1,51 @@
+.trends-wrapper {
+	align-self: flex-start;
+	margin-top: 5%;
+	border: 1px solid black;
+	width: 50vw;
+	height: 40vh;
+	padding: 10px;
+	overflow: scroll;
+}
+
+.trend-title {
+	display: flex;
+	padding: 7px;
+}
+
+.trends {
+	border: none;
+	margin-bottom: 0;
+	color: black;
+	font-size: 1.5rem;
+}
+
+.trend-card {
+	width: 99%;
+	height: 16%;
+	background-color: #f0f0f0;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+
+.trend-detail {
+	text-align: start;
+	margin-left: 12px;
+}
+
+.trend-btns {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.t-btn {
+	width: 10vw;
+	height: 1.5vh;
+	margin-left: 8px;
+}
+
+.trend-bold {
+	font-weight: bold;
+	color: #0071bc;
+}

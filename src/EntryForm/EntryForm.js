@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import ResultList from '../ResultList/ResultList';
 import { fetchSearch } from '../apiCalls';
 import DatePicker from "react-datepicker";
-import { Link } from "react-router-dom";
 import _ from 'lodash';
 import "./EntryForm.scss";
 import "react-datepicker/dist/react-datepicker.css";

@@ -1,8 +1,13 @@
 .log-details {
-	align-self: flex-start;
 	display: flex;
 	flex-direction: column;
 	align-items: start;
+	align-self: flex-start;
+	margin-top: 5%;
+	border: 1px solid black;
+	width: 50vw;
+	height: 40vh;
+	padding: 10px;
 }
 
 .log-details-header {
@@ -13,6 +18,11 @@
 
 .log-details-date {
 	margin-right: 40%;
+	border: none;
+	margin-bottom: 0;
+	color: black;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .back {
