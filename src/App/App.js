@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Route, Link } from  'react-router-dom';
+import { Route } from  'react-router-dom';
 import Header from '../Header/Header';
 import LogHistory from '../LogHistory/LogHistory';
 import EntryForm from '../EntryForm/EntryForm';
@@ -48,7 +48,7 @@ class App extends Component {
 						comment.food.forEach(f => {
 							const matched = matchingComments.filter(originalMatch => {
 								const values = originalMatch.food.map(food => (Object.values(food)));
-								if (values[0].includes(f.food_name)) return originalMatch;
+								if (values[0].includes(f.food_name)) return originalMatch
 							});
 							if (matched.length >= 2) {
 								const trendMatched = matched;
@@ -105,7 +105,7 @@ class App extends Component {
 	render () {
 		return (
 			<div className='App'>
-				<Header />
+				<Header trends={this.state.trends} />
 				<section className='layout-body'>
 					<LogHistory loggedEntries={this.state.loggedEntries} />
 					<Route 
@@ -134,7 +134,7 @@ class App extends Component {
 					<Route 
 						path='/trends' 
 						render={() => (
-							<Trends />
+							<Trends trends={this.state.trends} />
 						)}
 					/>
 					<Route 
