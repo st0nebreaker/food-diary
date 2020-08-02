@@ -9,16 +9,17 @@ import FoodInfo from '../FoodInfo/FoodInfo';
 import LogDetails from '../LogDetails/LogDetails';
 import ResultList from '../ResultList/ResultList';
 import { fetchFood } from '../apiCalls';
-import { data1, data2 } from '../data';
+import { data1, data2, data3 } from '../data';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			loggedEntries: [data1, data2],
+			loggedEntries: [data1, data2, data3],
 			activeFoodItem: null,
 			chosenFoods: [],
 			resultsActive: true,
+			trends: []
 		}
 	}
 
@@ -27,7 +28,43 @@ class App extends Component {
 			if (this.state.resultsActive && event.target !== ResultList) {
 				this.setState({ resultsActive: false })
 			}
-		})
+		});
+
+		this.findTrends();
+	}
+
+	componentDidUpdate() {
+		this.findTrends();
+	}
+
+	findTrends = () => {
+		let trend = [];
+
+		this.state.loggedEntries.forEach(entry => {
+			entry.comment.forEach(c => {
+				const matchingComments = this.state.loggedEntries.filter(e => e.comment.includes(c));
+				if (matchingComments.length >= 2) {
+					matchingComments.forEach((comment) => {
+						comment.food.forEach(f => {
+							const matched = matchingComments.filter(originalMatch => {
+								const values = originalMatch.food.map(food => (Object.values(food)));
+								if (values[0].includes(f.food_name)) return originalMatch;
+							});
+							if (matched.length >= 2) {
+								const trendMatched = matched;
+								trend.push({matchedTrend: trendMatched, reoccuringFood: f, comment: comment.comment});
+							}
+						})
+					})
+				}
+			})
+		});
+
+		const cleanedUpTrend = [...new Set(trend)];
+
+		if (trend.length > this.state.trends.length) {
+			this.setState({ trends: cleanedUpTrend });
+		}
 	}
 
 	findFood = async (givenValue) => {
