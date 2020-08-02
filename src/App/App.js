@@ -28,10 +28,6 @@ class App extends Component {
 				this.setState({ resultsActive: false })
 			}
 		})
-		//add event listener that listens to click on the body
-		//run a fn to check if results is showing
-		//& event target isn't resultsList
-		//then set resultsActive to false
 	}
 
 	findFood = async (givenValue) => {
