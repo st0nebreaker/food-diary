@@ -65,15 +65,17 @@ class App extends Component {
 			})
 		}
 
-		const clusterMatching = matchingByFood.reduce((acc, entry) => {
-			if (matchingByFood.length >= 2 && acc.find(item => item.reoccuringFood[0].food_name === entry.food[0].food_name) === undefined && acc.find(item => item.comment[0] === entry.comment[0]) === undefined) {
+		const removedDuplicates = matchingByFood.reduce((acc, entry) => {
+			const foodMatch = acc.find(item => item.reoccuringFood[0].food_name === entry.food[0].food_name);
+			const symptomMatch = acc.find(item => item.comment[0] === entry.comment[0]);
+			if (matchingByFood.length >= 2 && foodMatch === undefined && symptomMatch === undefined) {
 				acc.push({matchedTrend: [entry], reoccuringFood: entry.food, comment: entry.comment})
 			}
 			return acc;
 		}, []);
 
-		if (clusterMatching.length > this.state.trends.length) {
-			this.setState({ trends: clusterMatching });
+		if (removedDuplicates.length > this.state.trends.length) {
+			this.setState({ trends: removedDuplicates });
 		}
 	}
 
