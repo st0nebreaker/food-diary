@@ -290,3 +290,17 @@ export const returnedSearch = {
 			}
 	]
 }
+
+export const mockEntry = {
+	comment: ['nausea'],
+	date: 'Sun 07 26 2020',
+	food: [fetchedFood],
+}
+
+export const mockTrends = [
+	{
+		comment: ['nausea'],
+		matchedTrend: [mockEntry],
+		reoccuringFood: [fetchedFood]
+	}
+]
