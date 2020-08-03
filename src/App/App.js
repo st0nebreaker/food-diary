@@ -38,32 +38,42 @@ class App extends Component {
 	}
 
 	findTrends = () => {
-		let trend = [];
+		let matchingBySymptom = [];
+		let matchingByFood = [];
 
 		this.state.loggedEntries.forEach(entry => {
 			entry.comment.forEach(c => {
-				const matchingComments = this.state.loggedEntries.filter(e => e.comment.includes(c));
-				if (matchingComments.length >= 2) {
-					matchingComments.forEach((comment) => {
-						comment.food.forEach(f => {
-							const matched = matchingComments.filter(originalMatch => {
-								const values = originalMatch.food.map(food => (Object.values(food)));
-								if (values[0].includes(f.food_name)) return originalMatch
-							});
-							if (matched.length >= 2) {
-								const trendMatched = matched;
-								trend.push({matchedTrend: trendMatched, reoccuringFood: f, comment: comment.comment});
-							}
-						})
-					})
-				}
+				const foundMatch = this.state.loggedEntries.filter(e => e.comment.includes(c));
+				foundMatch.forEach(m => matchingBySymptom.push(m));
 			})
 		});
+		
+		if (matchingBySymptom.length >= 2) {
+			matchingBySymptom.forEach((entry) => {
+				entry.food.forEach(f => {
 
-		const cleanedUpTrend = [...new Set(trend)];
+					const foundMatch = matchingBySymptom.filter(symptomMatch => {
+						const values = symptomMatch.food.map(food => (Object.values(food)));
+						if (values[0].includes(f.food_name))
+							return symptomMatch;
+					});
 
-		if (trend.length > this.state.trends.length) {
-			this.setState({ trends: cleanedUpTrend });
+					if (foundMatch.length >= 2) {
+						foundMatch.forEach(m => matchingByFood.push(m));
+					}
+				})
+			})
+		}
+
+		const clusterMatching = matchingByFood.reduce((acc, entry) => {
+			if (matchingByFood.length >= 2 && acc.find(item => item.reoccuringFood[0].food_name === entry.food[0].food_name) === undefined && acc.find(item => item.comment[0] === entry.comment[0]) === undefined) {
+				acc.push({matchedTrend: [entry], reoccuringFood: entry.food, comment: entry.comment})
+			}
+			return acc;
+		}, []);
+
+		if (clusterMatching.length > this.state.trends.length) {
+			this.setState({ trends: clusterMatching });
 		}
 	}
 

@@ -12,7 +12,7 @@ const Trends = ({ trends }) => {
 			{trends.map((trend, i) => {
 				return (
 					<section className='trend-card' key={i}>
-						<p className='trend-detail'>You've reported <span className='trend-bold'>{trend.comment}</span> symptom 2 or more times in association with consuming <span className='trend-bold'>{trend.reoccuringFood.food_name}</span>.</p>
+						<p className='trend-detail'>You've reported <span className='trend-bold'>{trend.comment}</span> symptom 2 or more times in association with consuming <span className='trend-bold'>{trend.reoccuringFood[0].food_name}</span>.</p>
 						<section className='trend-btns'>
 							<button className='t-btn'>CLEAR</button>
 							<button className='t-btn'>TAKE A LOOK</button>
