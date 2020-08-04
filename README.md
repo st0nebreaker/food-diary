@@ -39,7 +39,7 @@ npm start
 - git/Version Control
 - Project Board ([on Trello](https://trello.com/b/jd7eWRDL/fooddiary))
 
-## Future Iterations..
+## Wins
 - Implementing lodash debounce for active searches
 - Creating an alert functionality
 - Evaluating a fairly complex trend calculator
