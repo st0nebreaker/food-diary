@@ -45,7 +45,9 @@ class App extends Component {
 		this.state.loggedEntries.forEach(entry => {
 			entry.comment.forEach(c => {
 				const foundMatch = this.state.loggedEntries.filter(e => e.comment.includes(c));
-				foundMatch.forEach(m => matchingBySymptom.push(m));
+				if (foundMatch.length >= 2) {
+					foundMatch.forEach(m => matchingBySymptom.push(m));
+				}
 			})
 		});
 		
