@@ -11,8 +11,19 @@
 	font-family: "Source Sans Pro", Helvetica;
 }
 
+.trend-btn-wrapper {
+	width: 90px;
+	height: 35px;
+	display: flex;
+	position: relative;
+}
+
 .trend-btn {
-	margin-left: 46px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	align-self: flex-end;
+	width: 73px;
+	height: 22px;
 }
 
 .logout-btn {
@@ -27,8 +38,8 @@
 }
 
 .notification {
-	width: 2vw;
+	width: 15px;
 	position: absolute;
-	right: 79%;
-	top: 1.8%;
+	right: 1px;
+	top: 2px;
 }

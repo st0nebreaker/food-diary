@@ -18,6 +18,6 @@ const ResultList = (props) => {
 			})}
 		</ul>
 	)
-}
+}//html element select
 
 export default ResultList;

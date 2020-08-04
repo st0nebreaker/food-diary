@@ -2,6 +2,7 @@
 	border: 1px solid black;
 	width: 50vw;
 	height: 40vh;
+	min-height: 400px;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -22,6 +23,8 @@ input {
 	width: 52%;
 	margin: 0 auto;
 	text-align: start;
+	position: relative;
+	z-index: 5;
 }
 
 .checkbox {
@@ -30,6 +33,8 @@ input {
 
 .submit-form {
 	margin: 0 auto;
+	position: relative;
+	z-index: 5;
 }
 
 .subtitle {

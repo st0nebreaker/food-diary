@@ -1,11 +1,16 @@
+import * as sinon from 'sinon';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MemoryRouter } from 'react-router-dom';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import App from './App';
+import EntryForm from '../EntryForm/EntryForm';
 import { returnedSearch, fetchedFood2 } from '../test-data';
 import { fetchFood, fetchSearch } from '../apiCalls';
+import userEvent from '@testing-library/user-event';
+
 jest.mock('../apiCalls');
+// jest.mock('../EntryForm/EntryForm');
 
 describe('App', () => {
 	beforeEach(() => {
@@ -129,23 +134,27 @@ describe('App', () => {
 	});
 
 	it('On the EntryForm, the search input retrieves data actively', async () => {
-		const { getByLabelText, getByText, debug } = render(
+		const { getByLabelText, getByText } = render(
 			<MemoryRouter><App /></MemoryRouter>
-		);
+			);
 
-		const searchInput = getByLabelText('search');
+		console.log('ENTRY', EntryForm.handleSearchChange)
 
-		fireEvent.keyDown(searchInput)
+		jest.mock(EntryForm.handleSearchChange).mockResolvedValue(() => {
+			return returnedSearch
+		});
 		
-		const searchResult1 = await waitFor(() => getByText('apple'))
-		debug()
-		// const appTitle = getByText('Food Diary');
+		const searchInput = getByLabelText('search');
+		
+		await waitFor(() => fireEvent.keyDown(searchInput))
+		// fireEvent.keyPress(searchInput) //try user event type dependency
+		
+		// userEvent.type(searchInput, 'appl')
+		// await waitFor(() => userEvent.type(searchInput, 'appl'));
 
-		// fireEvent.click(appTitle);
+		const searchResult1 = await waitFor(() => getByText('apple'));
 
-		// const entryFormTitle = getByText('New Food Entry');
-
-		// expect(entryFormTitle).toBeInTheDocument();
+		expect(searchResult1).toBeInTheDocument();
 	});
 	
 	//clicking item in result list, food info displays
