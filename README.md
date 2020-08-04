@@ -40,6 +40,11 @@ npm start
 - Project Board ([on Trello](https://trello.com/b/jd7eWRDL/fooddiary))
 
 ## Future Iterations..
+- Implementing lodash debounce for active searches
+- Creating an alert functionality
+- Evaluating a fairly complex trend calculator
+
+## Future Iterations..
 - Mobile application
 - Create login verification with Express BE
 - Functionality to edit food logs, take a closer look at trends, and clear trend alerts
