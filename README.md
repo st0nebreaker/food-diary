@@ -22,10 +22,10 @@ npm start
 ```
 
 ## In Action
-### If an entry is submitted with the same symptom associated with a food item from a different day, a new trend notification will alert
+**If an entry is submitted with the same symptom associated with a food item from a different day, a new trend notification will alert
 ![](https://media.giphy.com/media/eH3zbMsbXvzchEme8S/giphy.gif)
 
-### Active search bar demo
+**Active search bar demo
 ![](https://media.giphy.com/media/SsgKRQiKtlQQpVjrao/giphy.gif)
 
 ## Technologies Used
