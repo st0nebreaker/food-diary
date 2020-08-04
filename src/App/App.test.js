@@ -57,10 +57,8 @@ describe('App', () => {
 		fireEvent.click(trendsBtn);
 
 		const trendsTitle = getByText('Trends');
-		const clearBtn = getByText('CLEAR');
 	
 		expect(trendsTitle).toBeInTheDocument();
-		expect(clearBtn).toBeInTheDocument();
 	});
 
 	it('On the Trends page, the back button takes user back to Home', () => {
@@ -133,12 +131,10 @@ describe('App', () => {
 		expect(entryFormTitle).toBeInTheDocument();
 	});
 
-	it('On the EntryForm, the search input retrieves data actively', async () => {
+	it.skip('On the EntryForm, the search input retrieves data actively', async () => {
 		const { getByLabelText, getByText } = render(
 			<MemoryRouter><App /></MemoryRouter>
 			);
-
-		console.log('ENTRY', EntryForm.handleSearchChange)
 
 		jest.mock(EntryForm.handleSearchChange).mockResolvedValue(() => {
 			return returnedSearch
@@ -155,30 +151,5 @@ describe('App', () => {
 		const searchResult1 = await waitFor(() => getByText('apple'));
 
 		expect(searchResult1).toBeInTheDocument();
-	});
-	
-	//clicking item in result list, food info displays
-	//clicking add, adds it to the form
-	//submitting the form adds a new food history log
-
-	it.skip('From the homepage, if Details button is clicked, user should be directed to the CocktailDetails page', async () => {
-		const { getByLabelText, getByText, getByPlaceholderText, debug } = render(
-			<MemoryRouter><App /></MemoryRouter>
-		);
-		
-		const nameInput = getByPlaceholderText('username');
-		const submitBtn = getByLabelText('over-21-button');
-
-		fireEvent.change(nameInput, {target: {value: 'GG'}});
-		fireEvent.click(submitBtn);
-
-		const detailsBtn = await waitFor(() => getByText('Make Me'));
-
-		fireEvent.click(detailsBtn);
-
-		debug();
-
-		const detailsInstructions = await waitFor(() => getByText('Fill glass with ice and fish, add vodka, grape soda and orange juice. DO NOT STIR!!!!! Serve well chilled.'));
-		expect(detailsInstructions).toBeInTheDocument();
 	});
 })

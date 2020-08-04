@@ -2,7 +2,8 @@
 	border: 1px solid black;
 	width: 50vw;
 	height: 40vh;
-	min-height: 400px;
+	min-height: 500px;
+	max-width: 500px;	
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -33,6 +34,7 @@ input {
 
 .submit-form {
 	margin: 0 auto;
+	margin-top: 10px;
 	position: relative;
 	z-index: 5;
 }
