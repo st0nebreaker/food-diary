@@ -15,7 +15,7 @@ Look up over 600k items of food (natural food or by brand) to view their nutrien
 
 ## Setup
 ```
-git clone [this file path]
+git clone [file path name]
 cd food-diary
 npm install 
 npm start
