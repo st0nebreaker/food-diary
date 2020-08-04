@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Food Diary
+### Contributor
+- Becca Steinbrecher (GitHub: [b-stein](https://github.com/b-stein))
 
-## Available Scripts
+## Abstract
+Any person looking to improve their intuitive eating or better their personal diet. Everyone’s body processes food differently for a myriad of reasons: ancestry, medical history, acquired allergies, lifestyle, etc. Whether you’re an athlete looking to improve your performance by way of nutrition, someone looking to pinpoint the source of a digestive problem, or a person wanting to develop a more clean energy source and find a diet that works for your body, Food Diary can help you!
 
-In the project directory, you can run:
+For the most accurate results, track everything you consume for a minimum of 2 weeks along with notable symptoms to evaluate the best diet for you.
 
-### `npm start`
+Look up over 600k items of food (natural food or by brand) to view their nutrient info, view your past food logs, create a new food log, receive trend alerts.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Learning Goals
+- Create an application with React, React Router, Asynchronous JavaScript, and robust testing
+- Utilizing an api, deliver a unique product to help an audience in some way
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Setup
+```
+git clone [this file path]
+cd food-diary
+npm install 
+npm start
+```
 
-### `npm test`
+## In Action
+#### Login page
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="975" alt="Screen Shot 2020-06-09 at 8 34 49 PM" src="https://user-images.githubusercontent.com/59381432/84221224-f6740580-aa91-11ea-90e4-b03f8002cc04.png">
 
-### `npm run build`
+#### User book request form
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="982" alt="Screen Shot 2020-06-09 at 8 39 37 PM" src="https://user-images.githubusercontent.com/59381432/84221234-fc69e680-aa91-11ea-9419-b15bfc084ec4.png">
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Mobile view of the user's dashboard
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![2020-06-09 20 41 30](https://user-images.githubusercontent.com/59381432/84221879-72228200-aa93-11ea-9e68-2d2e4e1189d1.gif)
 
-### `npm run eject`
+#### Agent's view opening trips and denying requests
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![2020-06-09 20 39 49](https://user-images.githubusercontent.com/59381432/84221922-89616f80-aa93-11ea-9708-7b2546636900.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Agent searching for user's by name
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![2020-06-09 20 40 33](https://user-images.githubusercontent.com/59381432/84221957-9b431280-aa93-11ea-9ee9-ce2ce079bc7c.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Technologies Used
+- React
+- React Testing Library
+- Jest
+- Lodash debounce
+- HTML/CSS
 
-## Learn More
+### Future Iterations..
+- Mobile application
+- Create login verification with Express BE
+- Functionality to edit food logs, take a closer look at trends, and clear trend alerts
+- Add in error handling to display to the DOM
+- Adjust drop down search bar to meet production styling
+- Gain more accurate trend evaluations with a nutritionist consult
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Systems/Practices
+- git/Version Control
+- Project Board ([on Trello](https://trello.com/b/jd7eWRDL/fooddiary))
