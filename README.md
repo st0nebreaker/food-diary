@@ -22,25 +22,7 @@ npm start
 ```
 
 ## In Action
-#### Login page
-
-<img width="975" alt="Screen Shot 2020-06-09 at 8 34 49 PM" src="https://user-images.githubusercontent.com/59381432/84221224-f6740580-aa91-11ea-90e4-b03f8002cc04.png">
-
-#### User book request form
-
-<img width="982" alt="Screen Shot 2020-06-09 at 8 39 37 PM" src="https://user-images.githubusercontent.com/59381432/84221234-fc69e680-aa91-11ea-9419-b15bfc084ec4.png">
-
-#### Mobile view of the user's dashboard
-
-![2020-06-09 20 41 30](https://user-images.githubusercontent.com/59381432/84221879-72228200-aa93-11ea-9e68-2d2e4e1189d1.gif)
-
-#### Agent's view opening trips and denying requests
-
-![2020-06-09 20 39 49](https://user-images.githubusercontent.com/59381432/84221922-89616f80-aa93-11ea-9708-7b2546636900.gif)
-
-#### Agent searching for user's by name
-
-![2020-06-09 20 40 33](https://user-images.githubusercontent.com/59381432/84221957-9b431280-aa93-11ea-9ee9-ce2ce079bc7c.gif)
+![](https://media.giphy.com/media/eH3zbMsbXvzchEme8S/giphy.gif)
 
 ## Technologies Used
 - React
@@ -49,14 +31,14 @@ npm start
 - Lodash debounce
 - HTML/CSS
 
-### Future Iterations..
+## Systems/Practices
+- git/Version Control
+- Project Board ([on Trello](https://trello.com/b/jd7eWRDL/fooddiary))
+
+## Future Iterations..
 - Mobile application
 - Create login verification with Express BE
 - Functionality to edit food logs, take a closer look at trends, and clear trend alerts
 - Add in error handling to display to the DOM
 - Adjust drop down search bar to meet production styling
 - Gain more accurate trend evaluations with a nutritionist consult
-
-## Systems/Practices
-- git/Version Control
-- Project Board ([on Trello](https://trello.com/b/jd7eWRDL/fooddiary))
