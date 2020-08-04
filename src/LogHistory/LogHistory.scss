@@ -1,5 +1,6 @@
 .log-history-wrapper {
 	width: 30vw;
+	max-width: 500px;
 	height: 85vh;
 }
 
@@ -18,10 +19,13 @@
 	margin-top: 0;
 	margin-left: 0;
 	width: 97%;
+	min-height: 20px;
 }
 
 .entry-card {
 	height: 7.5vh;
+	min-height: 83px;
+  justify-content: space-between;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;

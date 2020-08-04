@@ -1,6 +1,7 @@
 import React from "react";
 import FoodLog from '../FoodLog/FoodLog';
 import "./LogHistory.scss";
+import PropTypes from 'prop-types';
 
 const LogHistory = (props) => {
 	const entryCards = props.loggedEntries.map((entry, i) => {
@@ -23,3 +24,10 @@ const LogHistory = (props) => {
 }
 
 export default LogHistory;
+
+LogHistory.propTypes = {
+	loggedEntries: PropTypes.array,
+	date: PropTypes.string,
+	comment: PropTypes.array,
+	food: PropTypes.array
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./FoodInfo.scss";
+import PropTypes from 'prop-types';
 
 const FoodInfo = ({ food, handleAdd, closeFoodCard }) => {
 	return (
@@ -40,3 +41,9 @@ const FoodInfo = ({ food, handleAdd, closeFoodCard }) => {
 }
 
 export default FoodInfo;
+
+FoodInfo.propTypes = {
+	food: PropTypes.object,
+	handleAdd: PropTypes.func,
+	closeFoodCard: PropTypes.func
+}

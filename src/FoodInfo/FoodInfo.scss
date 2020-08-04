@@ -4,11 +4,12 @@
 	border: 1px solid grey;
 	width: 40vw;
 	height: 40vh;
+	min-height: 400px;
 	background-color: white;
 	right: 11%;
 	z-index: 15;
 	flex-direction: column;
-	margin-top: -31%;
+	margin-top: -27%;
 	overflow: scroll;
 }
 
@@ -19,7 +20,7 @@
 .food-info {
 	display: flex;
 	height: 26vh;
-	justify-content: space-between;
+	justify-content: space-around;
 	padding: 6px;
 }
 
@@ -33,11 +34,16 @@
 	text-align: center;
 	margin: 0 auto;
 	width: 8vw;
+	min-width: 120px;
 	height: 3vh;
+	position: absolute;
+	bottom: 4px;
+	right: 38%;
 }
 
 .food-info-pic {
 	width: 53%;
+	max-width: 300px;
 	height: 82%;
 }
 

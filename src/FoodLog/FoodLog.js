@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./FoodLog.scss";
+import PropTypes from 'prop-types';
 
 const FoodLog = (props) => {
 	return (
@@ -16,3 +17,9 @@ const FoodLog = (props) => {
 }
 
 export default FoodLog;
+
+FoodLog.propTypes = {
+	date: PropTypes.string,
+	comment: PropTypes.array,
+	food: PropTypes.array
+}

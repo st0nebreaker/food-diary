@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import _ from 'lodash';
 import "./EntryForm.scss";
 import "react-datepicker/dist/react-datepicker.css";
+import PropTypes from 'prop-types';
 
 class EntryForm extends Component {
 	constructor(props) {
@@ -200,3 +201,13 @@ class EntryForm extends Component {
 }
 
 export default EntryForm;
+
+EntryForm.propTypes = {
+	findFood: PropTypes.func,
+	chosenFoods: PropTypes.array,
+	clearChosenFood: PropTypes.func,
+	showResultList: PropTypes.func,
+	resultListActive: PropTypes.bool,
+	addToLog: PropTypes.func,
+	items: PropTypes.array,
+}

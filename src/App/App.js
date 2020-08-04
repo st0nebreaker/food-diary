@@ -9,13 +9,14 @@ import FoodInfo from '../FoodInfo/FoodInfo';
 import LogDetails from '../LogDetails/LogDetails';
 import ResultList from '../ResultList/ResultList';
 import { fetchFood } from '../apiCalls';
-import { data1, data2, data3 } from '../data';
+import { data1, data2 } from '../data';
+import PropTypes from 'prop-types';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			loggedEntries: [data1, data2, data3],
+			loggedEntries: [data1, data2],
 			activeFoodItem: null,
 			chosenFoods: [],
 			resultsActive: true,
@@ -166,3 +167,18 @@ class App extends Component {
 }
 
 export default App;
+
+App.propTypes = {
+	loggedEntries: PropTypes.array,
+	findFood: PropTypes.func,
+	chosenFoods: PropTypes.array,
+	clearChosenFood: PropTypes.func,
+	showResultList: PropTypes.func,
+	resultListActive: PropTypes.bool,
+	addToLog: PropTypes.func,
+	food: PropTypes.object,
+	handleAdd: PropTypes.func,
+	closeFoodCard: PropTypes.func,
+	trends: PropTypes.array,
+	entryLog: PropTypes.object
+}
