@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Trends.scss";
+import PropTypes from 'prop-types';
 
 const Trends = ({ trends }) => {
 	return (
@@ -25,3 +26,7 @@ const Trends = ({ trends }) => {
 }
 
 export default Trends;
+
+Trends.propTypes = {
+	trends: PropTypes.array
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
+import PropTypes from 'prop-types';
 
 const Header = ({ trends }) => {
 	return (
@@ -22,3 +23,7 @@ const Header = ({ trends }) => {
 }
 
 export default Header;
+
+Header.propTypes = {
+	trends: PropTypes.array
+}

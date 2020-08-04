@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LogDetails.scss";
+import PropTypes from 'prop-types';
 
 const LogDetails = ({entryLog}) => {
 	return (
@@ -16,3 +17,7 @@ const LogDetails = ({entryLog}) => {
 }
 
 export default LogDetails;
+
+LogDetails.propTypes = {
+	entryLog: PropTypes.object
+}

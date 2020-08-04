@@ -1,5 +1,6 @@
 import React from 'react';
 import "./ResultList.scss";
+import PropTypes from 'prop-types';
 
 const ResultList = (props) => {
 	return (
@@ -18,6 +19,12 @@ const ResultList = (props) => {
 			})}
 		</ul>
 	)
-}//html element select
+}
 
 export default ResultList;
+
+ResultList.propTypes = {
+	items: PropTypes.array,
+	resultListActive: PropTypes.bool,
+	findFood: PropTypes.func
+}
