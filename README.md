@@ -46,6 +46,8 @@ npm start
 
 ## Future Iterations..
 - Enable edit/delettion of food logs
+- Feature: Clear all trends
+- Cleanup searchbar dropdown SCSS
 - Mobile application
 - Create login verification with Express BE
 - Functionality to edit food logs, take a closer look at trends, and clear trend alerts
