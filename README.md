@@ -45,6 +45,7 @@ npm start
 - Evaluating a fairly complex trend calculator
 
 ## Future Iterations..
+- Enable edit/delettion of food logs
 - Mobile application
 - Create login verification with Express BE
 - Functionality to edit food logs, take a closer look at trends, and clear trend alerts
